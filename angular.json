@@ -99,13 +99,6 @@
             "scripts": []
           }
         },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": ["/"]
-          },
-          "defaultConfiguration": "production"
-        },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
