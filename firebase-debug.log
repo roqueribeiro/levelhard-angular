@@ -1,0 +1,37 @@
+[debug] [2023-06-19T19:34:54.487Z] ----------------------------------------------------------------------
+[debug] [2023-06-19T19:34:54.488Z] Command:       /home/ubuntu/.nvm/versions/node/v20.3.0/bin/node /mnt/c/Users/roque/AppData/Roaming/npm/node_modules/firebase-tools/lib/bin/firebase.js deploy
+[debug] [2023-06-19T19:34:54.489Z] CLI Version:   12.3.1
+[debug] [2023-06-19T19:34:54.489Z] Platform:      linux
+[debug] [2023-06-19T19:34:54.489Z] Node Version:  v20.3.0
+[debug] [2023-06-19T19:34:54.489Z] Time:          Mon Jun 19 2023 16:34:54 GMT-0300 (Brasilia Standard Time)
+[debug] [2023-06-19T19:34:54.489Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-19T19:34:54.603Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-19T19:34:54.604Z] > authorizing via signed-in user (roque.ribeiro@levelhard.com.br)
+[debug] [2023-06-19T19:34:54.604Z] [iam] checking project levelhard for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-19T19:34:54.605Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/levelhard:testIamPermissions [none]
+[debug] [2023-06-19T19:34:54.605Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/levelhard:testIamPermissions x-goog-quota-user=projects/levelhard
+[debug] [2023-06-19T19:34:54.605Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/levelhard:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-19T19:34:55.505Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/levelhard:testIamPermissions 200
+[debug] [2023-06-19T19:34:55.505Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/levelhard:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-19T19:34:55.506Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/levelhard [none]
+[debug] [2023-06-19T19:34:55.890Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/levelhard 200
+[debug] [2023-06-19T19:34:55.890Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/levelhard {"projectId":"levelhard","projectNumber":"1068568499908","displayName":"levelhard","name":"projects/levelhard","resources":{"hostingSite":"levelhard"},"state":"ACTIVE","etag":"1_3fec106a-dfe8-49f5-bd4c-2d74f0858061"}
+[info] 
+   Thank you for trying our early preview of Angular support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/angular
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-06-19T19:35:29.621Z] Error: ng-deploy's browserTarget and prerender's browserTarget do not match. Please check your angular.json
+    at getContext (/mnt/c/Users/roque/AppData/Roaming/npm/node_modules/firebase-tools/lib/frameworks/angular/utils.js:170:23)
+    at async getBuildConfig (/mnt/c/Users/roque/AppData/Roaming/npm/node_modules/firebase-tools/lib/frameworks/angular/utils.js:312:128)
+    at async build (/mnt/c/Users/roque/AppData/Roaming/npm/node_modules/firebase-tools/lib/frameworks/angular/index.js:47:90)
+    at async prepareFrameworks (/mnt/c/Users/roque/AppData/Roaming/npm/node_modules/firebase-tools/lib/frameworks/index.js:211:33)
+    at async deploy (/mnt/c/Users/roque/AppData/Roaming/npm/node_modules/firebase-tools/lib/deploy/index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
