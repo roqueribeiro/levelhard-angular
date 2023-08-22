@@ -1,19 +1,13 @@
 {
   "hosting": [
     {
+      "target": "levelhard",
       "source": ".",
       "ignore": [
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
       ],
-      "frameworksBackend": {
-        "region": "us-central1"
-      }
-    },
-    {
-      "target": "levelhard",
-      "source": ".",
       "frameworksBackend": {
         "region": "us-central1"
       }
