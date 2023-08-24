@@ -1,14 +1,14 @@
 {
-  "projects": {
-    "default": "levelhard"
-  },
   "targets": {
-    "levelhard": {
+    "levelhard-applications": {
       "hosting": {
         "levelhard": [
-          "levelhard"
+          "levelhard-applications"
         ]
       }
     }
+  },
+  "projects": {
+    "default": "levelhard-applications"
   }
 }

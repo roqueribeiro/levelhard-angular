@@ -1,12 +1,12 @@
 export const environment = {
   firebase: {
-    projectId: 'levelhard',
-    appId: '1:1068568499908:web:451f62d6e71950269d5b91',
-    databaseURL: 'https://levelhard-default-rtdb.firebaseio.com',
-    storageBucket: 'levelhard.appspot.com',
-    apiKey: 'AIzaSyBnRzDwOQrDvTxhyNgshQ8QaAe-5vyUcWo',
-    authDomain: 'levelhard.firebaseapp.com',
-    messagingSenderId: '1068568499908',
-    measurementId: 'G-4HVVD0DNB7',
+    projectId: 'levelhard-applications',
+    appId: '1:733556390794:web:0a733eadeadee80402a673',
+    databaseURL: 'https://levelhard-applications-default-rtdb.firebaseio.com',
+    storageBucket: 'levelhard-applications.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyCRQooA1HpbraBfl7VTEmeeDd75O3W8KSo',
+    authDomain: 'levelhard-applications.firebaseapp.com',
+    messagingSenderId: '733556390794',
   },
 };
