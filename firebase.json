@@ -4,7 +4,7 @@
       "target": "levelhard",
       "source": ".",
       "frameworksBackend": {
-        "region": "us-central1"
+        "region": "southamerica-east1"
       }
     }
   ]
