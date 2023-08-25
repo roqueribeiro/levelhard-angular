@@ -1,22 +1,23 @@
-<mat-form-field>
-  <mat-label>Title</mat-label>
-  <input matInput cdkFocusInitial [(ngModel)]="data.task.title" />
-</mat-form-field>
+<h2 mat-dialog-title>Card Editor</h2>
 
-<mat-form-field>
-  <mat-label>Description</mat-label>
-  <textarea matInput [(ngModel)]="data.task.description"></textarea>
-</mat-form-field>
+<mat-dialog-content>
+  <mat-form-field class="w-full">
+    <mat-label>Title</mat-label>
+    <input matInput cdkFocusInitial [(ngModel)]="data.task.title" />
+  </mat-form-field>
 
-<div mat-dialog-actions>
+  <mat-form-field class="w-full">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="data.task.description"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
   <button mat-button [mat-dialog-close]="{ task: data.task }">OK</button>
   <button mat-button (click)="cancel()">Cancel</button>
-  <button
-    *ngIf="data.enableDelete"
-    mat-fab
-    color="primary"
-    aria-label="Delete"
+  <button *ngIf="data.enableDelete" mat-icon-button color="warn" aria-label="Delete"
     [mat-dialog-close]="{ task: data.task, delete: true }">
     <mat-icon>delete</mat-icon>
   </button>
-</div>
+</mat-dialog-actions>

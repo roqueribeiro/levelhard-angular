@@ -147,11 +147,23 @@
             "browserTarget": "levelhard:build:production",
             "serverTarget": "levelhard:server:production"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "41a5b1e1-a811-4588-8b5b-11605313ecc1"
+    "analytics": "41a5b1e1-a811-4588-8b5b-11605313ecc1",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
