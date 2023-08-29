@@ -39,6 +39,8 @@ import {
 } from '@angular/fire/remote-config';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 import { TaskComponent } from './components/task/task.component';
 import { TaskDialogComponent } from './components/task-dialog/task-dialog.component';
 
@@ -76,6 +78,7 @@ import { TaskDialogComponent } from './components/task-dialog/task-dialog.compon
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     DragDropModule,
+    EditorModule,
   ],
   providers: [ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent],

@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
 
   newTask(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
-      width: '400px',
+      width: '900px',
       data: {
         task: {},
       },
@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
 
   editTask(list: 'done' | 'todo' | 'inProgress', task: Task): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
-      width: '400px',
+      width: '900px',
       data: {
         task,
         enableDelete: true,

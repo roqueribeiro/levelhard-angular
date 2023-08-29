@@ -6,17 +6,32 @@
     <input matInput cdkFocusInitial [(ngModel)]="data.task.title" />
   </mat-form-field>
 
-  <mat-form-field class="w-full">
-    <mat-label>Description</mat-label>
-    <textarea matInput [(ngModel)]="data.task.description"></textarea>
-  </mat-form-field>
+  <editor
+    [(ngModel)]="data.task.description"
+    apiKey="6sx8q752ksvstswva8y05ks1qs2dsqys5u8k0wzzpse3p3ax"
+    [init]="{
+      menubar: false,
+      branding: false,
+      skin: 'tinymce-5',
+      content_css: 'tinymce-5',
+      toolbar:
+        'undo redo | blocks fontfamily fontsize | \ 
+         bold italic underline strikethrough | align lineheight | \ 
+         indent outdent | removeformat'
+    }"
+  ></editor>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-button [mat-dialog-close]="{ task: data.task }">OK</button>
   <button mat-button (click)="cancel()">Cancel</button>
-  <button *ngIf="data.enableDelete" mat-icon-button color="warn" aria-label="Delete"
-    [mat-dialog-close]="{ task: data.task, delete: true }">
+  <button
+    *ngIf="data.enableDelete"
+    mat-icon-button
+    color="warn"
+    aria-label="Delete"
+    [mat-dialog-close]="{ task: data.task, delete: true }"
+  >
     <mat-icon>delete</mat-icon>
   </button>
 </mat-dialog-actions>
