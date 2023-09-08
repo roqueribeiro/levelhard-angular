@@ -1,0 +1,56 @@
+<mat-sidenav-container>
+  <mat-sidenav #sideNav mode="push">
+    <mat-toolbar class="bg-zinc-900">
+      <span>Menu</span>
+      <div style="flex: 1 1 auto"></div>
+      <button mat-icon-button (click)="sideNav.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <div mat-subheader>Pages</div>
+      <mat-list-item
+        *ngFor="let item of menuItems"
+        (click)="gotoRoute(item.link)"
+      >
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span>{{ item.name }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <div mat-subheader>Settings</div>
+      <mat-list-item>
+        <mat-icon matListItemIcon>
+          {{ toggleControl.value ? "dark_mode" : "light_mode" }}
+        </mat-icon>
+        <span matListItemTitle> Dark Theme </span>
+        <mat-slide-toggle
+          [formControl]="toggleControl"
+          matListItemMeta
+        ></mat-slide-toggle>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="h-full">
+    <mat-toolbar class="bg-zinc-900">
+      <button mat-icon-button (click)="sideNav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="../assets/logo/logo-512.png" class="h-8 ml-4" alt="LEVELHARD" />
+    </mat-toolbar>
+
+    <div class="container mx-auto md:p-5 sm:p-2">
+      <div
+        class="h-full"
+        [@routeAnimations]="
+          o && o.activatedRouteData && o.activatedRouteData['animation']
+        "
+      >
+        <router-outlet #o="outlet"></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,36 @@
+.card-wrapper {
+  width: calc(100% - 48px);
+  max-width: 460px;
+  margin: 24px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-decoration: none;
+}
+
+.mat-card {
+  width: 100%;
+}
+
+.list {
+  min-height: 100px;
+  border-radius: 4px;
+  box-shadow: none;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.empty-label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  opacity: 0.2;
+  text-transform: uppercase;
+}
