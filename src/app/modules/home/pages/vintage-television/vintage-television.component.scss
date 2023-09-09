@@ -424,79 +424,64 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .old-tv {
+  .old-tv,
+  .old-tv main,
+  .old-tv::after,
+  .error-noise,
+  .old-tv-content,
+  .old-tv-content::after,
+  .error-effect::before,
+  .error-effect::after {
     position: fixed;
     width: 100%;
-    height: 100%;
-    padding: 0;
-    background: none;
     box-shadow: none;
     border: none;
     border-radius: 0;
-  }
-
-  .old-tv main {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .old-tv::after {
-    position: fixed;
-    width: 100%;
-    height: 100%;
     padding: 0;
     margin: 0;
     top: auto;
     left: auto;
   }
 
+  .old-tv {
+    height: calc(100% - 56px);
+    background: none;
+  }
+
+  .old-tv main {
+    height: calc(100% - 56px);
+  }
+
+  .old-tv::after {
+    height: calc(100% - 56px);
+    top: auto;
+    left: auto;
+    filter: none;
+    animation: none;
+    opacity: 0.8;
+  }
+
   .error-noise,
   .old-tv-content {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    box-shadow: none;
+    height: calc(100% - 56px);
   }
 
   .old-tv-content::after {
-    position: fixed;
-    width: 100%;
     height: 100%;
+    top: 2px;
   }
 
+  .error-effect::before,
   .error-effect::after {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
+    height: calc(100% - 56px);
   }
 
   .old-tv main::after,
-  .old-tv main::before {
-    display: none;
-  }
-
-  .old-tv .speaker {
-    display: none;
-  }
-
-  .old-tv .volume {
-    display: none;
-  }
-
-  .old-tv .channel {
-    display: none;
-  }
-
-  .old-tv .power {
-    display: none;
-  }
-
+  .old-tv main::before,
+  .old-tv .speaker,
+  .old-tv .volume,
+  .old-tv .channel,
+  .old-tv .power,
   .old-tv footer {
     display: none;
   }
