@@ -9,27 +9,13 @@
     </mat-toolbar>
 
     <mat-nav-list>
-      <div mat-subheader>Pages</div>
       <mat-list-item
         *ngFor="let item of menuItems"
-        (click)="gotoRoute(item.link)"
+        (click)="sideNav.toggle()"
+        [routerLink]="item.link"
       >
         <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
         <span>{{ item.name }}</span>
-      </mat-list-item>
-    </mat-nav-list>
-
-    <mat-nav-list>
-      <div mat-subheader>Settings</div>
-      <mat-list-item>
-        <mat-icon matListItemIcon>
-          {{ toggleControl.value ? "dark_mode" : "light_mode" }}
-        </mat-icon>
-        <span matListItemTitle> Dark Theme </span>
-        <mat-slide-toggle
-          [formControl]="toggleControl"
-          matListItemMeta
-        ></mat-slide-toggle>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
@@ -40,14 +26,17 @@
         <mat-icon>menu</mat-icon>
       </button>
       <img src="../assets/logo/logo-512.png" class="h-8 ml-4" alt="LEVELHARD" />
+      <span class="flex-auto"></span>
+      <mat-icon matListItemIcon class="mr-5">
+        {{ toggleControl.value ? "dark_mode" : "light_mode" }}
+      </mat-icon>
+      <mat-slide-toggle [formControl]="toggleControl"></mat-slide-toggle>
     </mat-toolbar>
 
     <div class="container mx-auto md:p-5 sm:p-2">
       <div
         class="h-full"
-        [@routeAnimations]="
-          o && o.activatedRouteData && o.activatedRouteData['animation']
-        "
+        [@routeAnimations]="o && o.activatedRouteData && o.activatedRouteData['animation']"
       >
         <router-outlet #o="outlet"></router-outlet>
       </div>

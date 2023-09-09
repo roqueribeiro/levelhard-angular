@@ -37,8 +37,4 @@ export class DefaultLayoutComponent implements OnInit {
       }
     });
   }
-
-  gotoRoute(path: string): void {
-    this.router.navigate([path]);
-  }
 }

@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
@@ -13,6 +13,5 @@ import { TaskDialogComponent } from './pages/task-dialog/task-dialog.component';
   declarations: [KanbanComponent, TaskComponent, TaskDialogComponent],
   exports: [],
   imports: [KanbanRoutingModule, SharedModule, DragDropModule, EditorModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class KanbanModule {}

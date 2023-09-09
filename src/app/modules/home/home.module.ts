@@ -4,8 +4,10 @@ import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './pages/home.component';
 import { HomeRoutingModule } from './home-routing.module';
 
+import { VintageTelevisionComponent } from './pages/vintage-television/vintage-television-component';
+
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, VintageTelevisionComponent],
   exports: [],
   imports: [SharedModule, HomeRoutingModule],
 })
