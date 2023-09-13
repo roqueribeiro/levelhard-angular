@@ -13,7 +13,8 @@
     inset 1px 0 1px rgba(255, 255, 255, 0.3),
     inset -1px 0 1px rgba(255, 255, 255, 0.3),
     inset 0 -1px 2px rgba(255, 255, 255, 0.2), 0 20px 50px rgba(0, 0, 0, 0.8),
-    0 10px 10px rgba(0, 0, 0, 0.8);
+    0 10px 10px rgba(0, 0, 0, 0.8), 0 40px 50px rgba(0, 0, 0, 0.8);
+  z-index: 1;
 }
 
 .old-tv::after {
@@ -290,6 +291,7 @@
   -o-animation: noise 200ms infinite linear;
   -webkit-animation: noise 200ms infinite linear;
   animation: noise 200ms infinite linear;
+  z-index: 1;
 }
 
 .error-effect::before {
@@ -303,6 +305,7 @@
   -webkit-animation: noiseeffect 4000ms infinite linear;
   animation: noiseeffect 4000ms infinite linear;
   border-radius: 50% / 5%;
+  z-index: 1;
 }
 
 .error-effect::after {
@@ -317,24 +320,21 @@
     inset -5px 0 15px rgba(255, 255, 255, 0.1), 0 0 10px rgba(0, 0, 0, 1),
     inset 0 200px 5px rgba(255, 255, 255, 0.05);
   border-radius: 50% / 5%;
+  z-index: 1;
 }
 
 .old-tv-content {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: transparent;
-  background-image: url(../../../../../assets/logo/logo-variation.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 70%;
   border-radius: 50% / 5%;
-  filter: grayscale(1) brightness(1.2) contrast(1.5);
+  filter: grayscale(0.4) brightness(1.2) contrast(1.5);
   -moz-animation: crt-image 20ms alternate infinite;
   -o-animation: crt-image 20ms alternate infinite;
   -webkit-animation: crt-image 20ms alternate infinite;
   animation: crt-image 20ms alternate infinite;
-  opacity: 0.9;
+  opacity: 0.8;
+  overflow: hidden;
 }
 
 .old-tv-content::after {
@@ -349,6 +349,30 @@
   -o-animation: crt-pixels 20ms alternate infinite;
   -webkit-animation: crt-pixels 20ms alternate infinite;
   animation: crt-pixels 20ms alternate infinite;
+  z-index: 10;
+}
+
+.old-tv-content::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      at bottom right,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.3) 70%,
+      rgba(255, 255, 255, 0) 85%,
+      rgba(255, 255, 255, 0.2) 100%
+    ),
+    url("../../../../../assets/background-tv-reflex.jpg");
+  background-size: 115%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  filter: brightness(1.5) contrast(1.5) blur(1px);
+  border-radius: 50% / 5%;
+  box-shadow: inset 0 0 15px white;
+  opacity: 0.2;
+  z-index: 10;
 }
 
 @keyframes screen {
@@ -476,6 +500,12 @@
     height: calc(100% - 56px);
   }
 
+  .old-tv-content::before {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0;
+  }
+
   .old-tv main::after,
   .old-tv main::before,
   .old-tv .speaker,
@@ -484,5 +514,125 @@
   .old-tv .power,
   .old-tv footer {
     display: none;
+  }
+}
+
+.area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.area .grass {
+  position: absolute;
+  width: 100%;
+  height: 110vh;
+  background-color: #444;
+  background-image: url("../../../../../assets/jaircraft/grass-texture.png");
+  background-repeat: repeat;
+  background-size: 100px;
+  animation: 1000ms grass-animate infinite linear;
+}
+
+.area .object {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50px;
+  border-radius: 100%;
+  background-color: transparent;
+  background-image: url("../../../../../assets/jaircraft/aircraft-min.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: 15s object-animate infinite ease-in-out;
+}
+
+.area .clouds img {
+  position: absolute;
+  height: 200px;
+  top: -300px;
+  opacity: 0.4;
+  z-index: 80;
+  filter: blur(8px);
+}
+
+@keyframes object-animate {
+  0% {
+    transform: translateX(0px);
+  }
+  10% {
+    transform: translateX(-64px) translateY(-64px);
+  }
+  20% {
+    transform: translateX(-128px) translateY(-64px);
+  }
+  30% {
+    transform: translateX(-64px) translateY(-128px);
+  }
+  40% {
+    transform: translateX(64px) translateY(-64px);
+  }
+  50% {
+    transform: translateX(128px) translateY(-200px);
+  }
+  60% {
+    transform: translateX(128px) translateY(-64px);
+  }
+  70% {
+    transform: translateX(-128px) translateY(-64px);
+  }
+  80% {
+    transform: translateX(200px) translateY(-128px);
+  }
+  90% {
+    transform: translateX(64px) translateY(-64px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.area .clouds img:nth-child(1) {
+  left: -100px;
+  opacity: 0.2;
+  animation: 16000ms cloud-animate infinite linear;
+}
+
+.area .clouds img:nth-child(2) {
+  right: 80px;
+  animation: 14000ms cloud-animate infinite linear;
+}
+
+.area .clouds img:nth-child(3) {
+  opacity: 0.2;
+  left: 20px;
+  animation: 12000ms cloud-animate infinite linear;
+}
+
+.area .clouds img:nth-child(4) {
+  right: -90px;
+  animation: 10000ms cloud-animate infinite linear;
+}
+
+@keyframes cloud-animate {
+  80% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(1100px);
+    opacity: 0;
+  }
+}
+
+@keyframes grass-animate {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
   }
 }

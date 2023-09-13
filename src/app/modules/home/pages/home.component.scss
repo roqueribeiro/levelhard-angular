@@ -1,0 +1,19 @@
+.home {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-image: url(../../../../assets/background-bricks.jpg);
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: 20%;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(transparent 20%, rgba(0, 0, 0, 0.9) 100%);
+}
