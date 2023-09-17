@@ -1,10 +1,111 @@
-.old-tv {
-  position: relative;
+.gradient {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: calc(100% - 64px);
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 20%,
+      transparent 80%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    radial-gradient(transparent 50%, rgba(0, 0, 0, 0.8));
+  overflow: hidden;
+  z-index: 2;
+}
+
+.gradient::before {
+  position: absolute;
+  content: " ";
+  width: 2500px;
+  height: 300px;
+  bottom: 5px;
+  left: 50%;
+  margin-left: -1250px;
+  background: radial-gradient(rgba(0, 0, 0, 0.5) 25%, transparent 50%);
+}
+
+.gradient::after {
+  position: absolute;
+  content: " ";
+  width: 2000px;
+  height: 1500px;
+  bottom: -300px;
+  left: 50%;
+  margin-left: -1000px;
+  background: radial-gradient(rgba(0, 0, 0, 0.6) 30%, transparent 50%);
+}
+
+.wood-floor {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 180px;
+  bottom: 0;
+  left: 0;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.wood-floor::before {
+  position: absolute;
+  content: " ";
+  top: -100%;
+  left: -25%;
+  width: 150%;
+  height: 250%;
+  background: url(../../../../../assets/vintage-television/background-floor-wood.jpg);
+  background-size: 400px;
+  -moz-transform: rotateX(60deg);
+  -ms-transform: rotateX(60deg);
+  -o-transform: rotateX(60deg);
+  -webkit-transform: rotateX(60deg);
+  transform: rotateX(60deg);
+}
+
+.brick-wall {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 64px);
+  background-image: url(../../../../../assets/vintage-television/background-bricks.jpg);
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: local;
+  background-size: 300px;
+  z-index: 1;
+}
+
+.brick-wall:before {
+  position: absolute;
+  content: " ";
+  bottom: 180px;
+  width: 100%;
+  height: 30px;
+  background-image: url(../../../../../assets/vintage-television/background-floor-wood-2.jpg);
+  background-size: 200px;
+  box-shadow: inset 0 2px rgba(255, 255, 255, 0.2),
+    inset 0 -5px 5px rgba(0, 0, 0, 0.2), 0 -1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.vintage-television * {
+  outline: none;
+}
+
+.vintage-television {
+  position: absolute;
   width: 870px;
   height: 465px;
-  margin: 0 auto;
+  left: 50%;
+  margin-left: -435px;
+  bottom: 440px;
+  transform: scale(0.8);
   background: #333;
-  background-image: url(data:image/png;base64,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);
+  background-image: url(../../../../../assets/vintage-television/noise.png);
   padding: 20px;
   border-radius: 8px;
   border-bottom: 4px #222 solid;
@@ -12,12 +113,13 @@
     inset 0 2px 1px rgba(255, 255, 255, 0.5),
     inset 1px 0 1px rgba(255, 255, 255, 0.3),
     inset -1px 0 1px rgba(255, 255, 255, 0.3),
-    inset 0 -1px 2px rgba(255, 255, 255, 0.2), 0 20px 50px rgba(0, 0, 0, 0.8),
-    0 10px 10px rgba(0, 0, 0, 0.8), 0 40px 50px rgba(0, 0, 0, 0.8);
-  z-index: 1;
+    inset 0 -1px 2px rgba(255, 255, 255, 0.2), 0 20px 20px rgba(0, 0, 0, 0.8),
+    0 10px 10px rgba(0, 0, 0, 0.8), 0 40px 50px rgba(0, 0, 0, 0.4),
+    50px 2px 20px rgba(0, 0, 0, 0.4), -50px 2px 20px rgba(0, 0, 0, 0.4);
+  z-index: 3;
 }
 
-.old-tv::after {
+.vintage-television::after {
   content: " ";
   position: absolute;
   top: 32px;
@@ -35,7 +137,7 @@
   animation: screen 800ms infinite linear;
 }
 
-.old-tv main {
+.vintage-television main {
   position: relative;
   display: inline-block;
   padding: 10px;
@@ -46,7 +148,7 @@
   vertical-align: top;
 }
 
-.old-tv main::before {
+.vintage-television main::before {
   content: " ";
   position: absolute;
   top: 0;
@@ -64,7 +166,7 @@
   z-index: 1;
 }
 
-.old-tv main::after {
+.vintage-television main::after {
   content: " ";
   position: absolute;
   top: 0;
@@ -79,7 +181,7 @@
   z-index: 2;
 }
 
-.old-tv .speaker {
+.vintage-television .speaker {
   position: absolute;
   width: 195px;
   height: 240px;
@@ -89,7 +191,7 @@
   box-sizing: border-box;
 }
 
-.old-tv .speaker::before {
+.vintage-television .speaker::before {
   content: " ";
   position: absolute;
   top: 0%;
@@ -110,7 +212,7 @@
   z-index: 2;
 }
 
-.old-tv .speaker::after {
+.vintage-television .speaker::after {
   content: " ";
   position: absolute;
   height: 200px;
@@ -124,7 +226,7 @@
   z-index: 1;
 }
 
-.old-tv .volume {
+.vintage-television .volume {
   position: absolute;
   width: 180px;
   height: 40px;
@@ -137,7 +239,7 @@
   border: 2px #000 solid;
 }
 
-.old-tv .channel {
+.vintage-television .channel {
   position: absolute;
   width: 180px;
   height: 40px;
@@ -150,7 +252,7 @@
   border: 2px #000 solid;
 }
 
-.old-tv input[type="range"] {
+.vintage-television input[type="range"] {
   appearance: none;
   position: absolute;
   width: 80%;
@@ -160,11 +262,11 @@
   margin: 16px 0;
 }
 
-.old-tv input[type="range"]:focus {
+.vintage-television input[type="range"]:focus {
   outline: none;
 }
 
-.old-tv input[type="range"]::-webkit-slider-runnable-track {
+.vintage-television input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
@@ -173,7 +275,7 @@
   border-radius: 1.3px;
 }
 
-.old-tv input[type="range"]::-webkit-slider-thumb {
+.vintage-television input[type="range"]::-webkit-slider-thumb {
   height: 25px;
   width: 10px;
   border-radius: 2px;
@@ -186,7 +288,7 @@
   margin-top: -10px;
 }
 
-.old-tv .power {
+.vintage-television .power {
   position: absolute;
   width: 180px;
   height: 60px;
@@ -199,7 +301,7 @@
   border: 2px #000 solid;
 }
 
-.old-tv .power > button {
+.vintage-television .power > button {
   position: relative;
   width: 70px;
   height: 40px;
@@ -216,7 +318,7 @@
   cursor: pointer;
 }
 
-.old-tv .power::after {
+.vintage-television .power::after {
   content: " Power ";
   position: absolute;
   font-family: Arial;
@@ -236,7 +338,7 @@
   text-shadow: 0 1px #000;
 }
 
-.old-tv .power::before {
+.vintage-television .power::before {
   content: " Standby ";
   position: absolute;
   font-family: Arial;
@@ -255,19 +357,37 @@
   text-shadow: 0 1px #000;
 }
 
-.old-tv footer {
+.vintage-television footer {
   position: absolute;
-  height: 15px;
-  bottom: -22px;
+  height: 35px;
+  bottom: -30px;
   left: 15px;
   right: 15px;
-  background: #222;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.5),
-    0 1px 2px rgba(0, 0, 0, 1);
-  border-bottom: 3px #000 solid;
-  z-index: -1;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.vintage-television footer::after {
+  content: " ";
+  position: absolute;
+  height: 100%;
+  left: 0;
+  right: 0;
+  transform: rotateX(-60deg);
+  background: #111;
+  box-shadow: inset 0 15px 5px rgba(0, 0, 0, 1),
+    inset 0 5px 2px rgba(0, 0, 0, 1), 0 4px 2px rgba(0, 0, 0, 1);
+}
+
+.vintage-television footer::before {
+  content: " ";
+  position: absolute;
+  height: 100px;
+  left: 0;
+  right: 0;
+  bottom: -48px;
+  transform: rotateX(80deg);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .error-noise {
@@ -285,7 +405,7 @@
   height: 100%;
   border-radius: 50% / 5%;
   background: #111;
-  background-image: url(data:image/png;base64,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);
+  background-image: url(../../../../../assets/vintage-television/noise.png);
   background-size: 80%;
   -moz-animation: noise 200ms infinite linear;
   -o-animation: noise 200ms infinite linear;
@@ -323,7 +443,7 @@
   z-index: 1;
 }
 
-.old-tv-content {
+.vintage-television-content {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -337,7 +457,7 @@
   overflow: hidden;
 }
 
-.old-tv-content::after {
+.vintage-television-content::after {
   content: " ";
   position: absolute;
   width: 100%;
@@ -352,7 +472,7 @@
   z-index: 10;
 }
 
-.old-tv-content::before {
+.vintage-television-content::before {
   content: " ";
   position: absolute;
   width: 100%;
@@ -364,7 +484,7 @@
       rgba(255, 255, 255, 0) 85%,
       rgba(255, 255, 255, 0.2) 100%
     ),
-    url("../../../../../assets/background-tv-reflex.jpg");
+    url("../../../../../assets/vintage-television/background-tv-reflex.jpg");
   background-size: 115%;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -374,6 +494,567 @@
   opacity: 0.2;
   z-index: 10;
 }
+
+.area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.area .grass {
+  position: absolute;
+  width: 100%;
+  height: 110vh;
+  background-color: #444;
+  background-image: url("../../../../../assets/vintage-television/jaircraft/grass-texture-min.jpg");
+  background-repeat: repeat;
+  background-size: 100px;
+  animation: 1000ms grass-animate infinite linear;
+}
+
+.area .object {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50px;
+  border-radius: 100%;
+  background-color: transparent;
+  background-image: url("../../../../../assets/vintage-television/jaircraft/aircraft-min.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: 15s object-animate infinite ease-in-out;
+}
+
+.area .clouds img {
+  position: absolute;
+  height: 200px;
+  top: -300px;
+  opacity: 0.4;
+  z-index: 80;
+  filter: blur(8px);
+}
+
+.area .clouds img:nth-child(1) {
+  left: -100px;
+  opacity: 0.2;
+  animation: 16000ms cloud-animate infinite linear;
+}
+
+.area .clouds img:nth-child(2) {
+  right: 80px;
+  animation: 14000ms cloud-animate infinite linear;
+}
+
+.area .clouds img:nth-child(3) {
+  opacity: 0.2;
+  left: 20px;
+  animation: 12000ms cloud-animate infinite linear;
+}
+
+.area .clouds img:nth-child(4) {
+  right: -90px;
+  animation: 10000ms cloud-animate infinite linear;
+}
+
+.table-vintage-television {
+  perspective: 1400px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+  font-size: 500%;
+  bottom: 0;
+  z-index: 2;
+}
+
+.face {
+  background-image: url("../../../../../assets/vintage-television/background-table-wood.jpg");
+  background-size: 100%;
+}
+
+.scene,
+.shape,
+.face,
+.face-wrapper,
+.cr {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -38em 0 0 -40em;
+}
+
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  -moz-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+  -o-transform-origin: 50%;
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+}
+
+.face,
+.face-wrapper {
+  overflow: hidden;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.face {
+  background-size: 100% 100% !important;
+  background-position: center;
+}
+
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.side {
+  left: 50%;
+}
+
+.cr,
+.cr .side {
+  height: 100%;
+}
+
+[class*="cuboid"] .ft,
+[class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+/* .cub-1 styles */
+.cub-1 {
+  -moz-transform: translate3D(0em, -5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  -ms-transform: translate3D(0em, -5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  -o-transform: translate3D(0em, -5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  -webkit-transform: translate3D(0em, -5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  transform: translate3D(0em, -5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  opacity: 1;
+  width: 12em;
+  height: 0.2em;
+  margin: -0.1em 0 0 -6em;
+}
+
+.cub-1 .ft {
+  transform: translateZ(2.625em);
+}
+
+.cub-1 .bk {
+  transform: translateZ(-2.625em) rotateY(180deg);
+}
+
+.cub-1 .rt,
+.cub-1 .lt {
+  width: 5.25em;
+  height: 0.2em;
+}
+
+.cub-1 .tp,
+.cub-1 .bm {
+  width: 12em;
+  height: 5.25em;
+}
+
+.cub-1 .face {
+  background-color: #ffffff;
+}
+/* .cub-3 styles */
+.cub-3 {
+  -moz-transform: translate3D(-4.0625em, -2.5em, -2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  -ms-transform: translate3D(-4.0625em, -2.5em, -2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  -o-transform: translate3D(-4.0625em, -2.5em, -2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  -webkit-transform: translate3D(-4.0625em, -2.5em, -2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  transform: translate3D(-4.0625em, -2.5em, -2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  opacity: 1;
+  width: 0.2em;
+  height: 5em;
+  margin: -2.5em 0 0 -0.1em;
+}
+
+.cub-3 .ft {
+  transform: translateZ(0.1em);
+}
+
+.cub-3 .bk {
+  transform: translateZ(-0.1em) rotateY(180deg);
+}
+
+.cub-3 .rt,
+.cub-3 .lt {
+  width: 0.2em;
+  height: 5em;
+}
+
+.cub-3 .tp,
+.cub-3 .bm {
+  width: 0.2em;
+  height: 0.2em;
+}
+
+.cub-3 .face {
+  background-color: #ffffff;
+}
+/* .cub-4 styles */
+.cub-4 {
+  -moz-transform: translate3D(-4.125em, -2.5em, 2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  -ms-transform: translate3D(-4.125em, -2.5em, 2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  -o-transform: translate3D(-4.125em, -2.5em, 2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  -webkit-transform: translate3D(-4.125em, -2.5em, 2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(12deg);
+  transform: translate3D(-4.125em, -2.5em, 2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(12deg);
+  opacity: 1;
+  width: 0.2em;
+  height: 5em;
+  margin: -2.5em 0 0 -0.1em;
+}
+
+.cub-4 .ft {
+  transform: translateZ(0.1em);
+}
+
+.cub-4 .bk {
+  transform: translateZ(-0.1em) rotateY(180deg);
+}
+
+.cub-4 .rt,
+.cub-4 .lt {
+  width: 0.2em;
+  height: 5em;
+}
+
+.cub-4 .tp,
+.cub-4 .bm {
+  width: 0.2em;
+  height: 0.2em;
+}
+
+.cub-4 .face {
+  background-color: #ffffff;
+}
+/* .cub-5 styles */
+.cub-5 {
+  -moz-transform: translate3D(4em, -2.5em, -2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  -ms-transform: translate3D(4em, -2.5em, -2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  -o-transform: translate3D(4em, -2.5em, -2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  -webkit-transform: translate3D(4em, -2.5em, -2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(-13deg);
+  transform: translate3D(4em, -2.5em, -2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  opacity: 1;
+  width: 0.2em;
+  height: 5em;
+  margin: -2.5em 0 0 -0.1em;
+}
+
+.cub-5 .ft {
+  transform: translateZ(0.1em);
+}
+
+.cub-5 .bk {
+  transform: translateZ(-0.1em) rotateY(180deg);
+}
+
+.cub-5 .rt,
+.cub-5 .lt {
+  width: 0.2em;
+  height: 5em;
+}
+
+.cub-5 .tp,
+.cub-5 .bm {
+  width: 0.2em;
+  height: 0.2em;
+}
+
+.cub-5 .face {
+  background-color: #ffffff;
+}
+/* .cub-6 styles */
+.cub-6 {
+  -moz-transform: translate3D(4em, -2.5em, 2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  -ms-transform: translate3D(4em, -2.5em, 2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  -o-transform: translate3D(4em, -2.5em, 2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  -webkit-transform: translate3D(4em, -2.5em, 2.125em) rotateX(0deg)
+    rotateY(0deg) rotateZ(-13deg);
+  transform: translate3D(4em, -2.5em, 2.125em) rotateX(0deg) rotateY(0deg)
+    rotateZ(-13deg);
+  opacity: 1;
+  width: 0.2em;
+  height: 5em;
+  margin: -2.5em 0 0 -0.1em;
+}
+
+.cub-6 .ft {
+  transform: translateZ(0.1em);
+}
+
+.cub-6 .bk {
+  transform: translateZ(-0.1em) rotateY(180deg);
+}
+
+.cub-6 .rt,
+.cub-6 .lt {
+  width: 0.2em;
+  height: 5em;
+}
+
+.cub-6 .tp,
+.cub-6 .bm {
+  width: 0.2em;
+  height: 0.2em;
+}
+
+.cub-6 .face {
+  background-color: #ffffff;
+}
+/* .cub-2 styles */
+.cub-2 {
+  -moz-transform: translate3D(0em, -3.5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  -ms-transform: translate3D(0em, -3.5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  -o-transform: translate3D(0em, -3.5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  -webkit-transform: translate3D(0em, -3.5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  transform: translate3D(0em, -3.5em, 0em) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg);
+  opacity: 1;
+  width: 10em;
+  height: 0.2em;
+  margin: -0.1em 0 0 -5em;
+}
+
+.cub-2 .ft {
+  transform: translateZ(2.625em);
+}
+
+.cub-2 .bk {
+  transform: translateZ(-2.625em) rotateY(180deg);
+}
+
+.cub-2 .rt,
+.cub-2 .lt {
+  width: 5.25em;
+  height: 0.2em;
+}
+
+.cub-2 .tp,
+.cub-2 .bm {
+  width: 10em;
+  height: 5.25em;
+}
+
+.cub-2 .face {
+  background-color: #ffffff;
+}
+
+/* ====== 1080p ====== */
+
+@media only screen and (max-height: 958px) {
+  .gradient::before {
+    width: 1000px;
+    height: 300px;
+    bottom: -70px;
+    margin-left: -500px;
+    background: radial-gradient(rgba(0, 0, 0, 0.6) 25%, transparent 50%);
+  }
+  .gradient::after {
+    width: 1500px;
+    height: 750px;
+    bottom: -50px;
+    margin-left: -750px;
+    background: radial-gradient(rgba(0, 0, 0, 0.6) 30%, transparent 50%);
+  }
+  .brick-wall {
+    background-size: 200px;
+  }
+  .brick-wall:before {
+    bottom: 120px;
+  }
+  .wood-floor {
+    height: 120px;
+  }
+  .wood-floor::before {
+    background-size: 200px;
+  }
+  .vintage-television {
+    transform: scale(0.5);
+    bottom: 186px;
+  }
+  .table-vintage-television {
+    transform: scale(0.6);
+    bottom: -90px;
+  }
+}
+
+/* ====== 4K ====== */
+
+@media only screen and (min-width: 2560px) {
+  .brick-wall {
+    background-image: url("../../../../../assets/vintage-television/original/background-bricks.jpg");
+  }
+  .brick-wall:before {
+    background-image: url("../../../../../assets/vintage-television/original/background-floor-wood-2.jpg");
+  }
+  .wood-floor::before {
+    background-image: url("../../../../../assets/vintage-television/original/background-floor-wood.jpg");
+  }
+  .face {
+    background-image: url("../../../../../assets/vintage-television/original/background-table-wood.jpg");
+  }
+}
+
+/* ====== MOBILE ====== */
+
+@media only screen and (max-width: 992px) {
+  .vintage-television {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 56px);
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    transform: scale(1);
+  }
+
+  .vintage-television main,
+  .vintage-television::after,
+  .error-noise,
+  .vintage-television-content,
+  .vintage-television-content::after,
+  .error-effect::before,
+  .error-effect::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .vintage-television::after {
+    height: 100%;
+    top: auto;
+    left: auto;
+    filter: none;
+    animation: none;
+    opacity: 0.8;
+  }
+
+  .vintage-television-content::after {
+    top: 2px;
+  }
+
+  .vintage-television-content::before {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0;
+  }
+
+  .gradient,
+  .brick-wall,
+  .wood-floor,
+  .vintage-television main::after,
+  .vintage-television main::before,
+  .vintage-television .speaker,
+  .vintage-television .volume,
+  .vintage-television .channel,
+  .vintage-television .power,
+  .vintage-television footer,
+  .table-vintage-television {
+    display: none;
+  }
+}
+
+/* ====== Animations ====== */
 
 @keyframes screen {
   0% {
@@ -447,117 +1128,23 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .old-tv,
-  .old-tv main,
-  .old-tv::after,
-  .error-noise,
-  .old-tv-content,
-  .old-tv-content::after,
-  .error-effect::before,
-  .error-effect::after {
-    position: fixed;
-    width: 100%;
-    box-shadow: none;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-    top: auto;
-    left: auto;
+@keyframes cloud-animate {
+  80% {
+    opacity: 1;
   }
-
-  .old-tv {
-    height: calc(100% - 56px);
-    background: none;
-  }
-
-  .old-tv main {
-    height: calc(100% - 56px);
-  }
-
-  .old-tv::after {
-    height: calc(100% - 56px);
-    top: auto;
-    left: auto;
-    filter: none;
-    animation: none;
-    opacity: 0.8;
-  }
-
-  .error-noise,
-  .old-tv-content {
-    height: calc(100% - 56px);
-  }
-
-  .old-tv-content::after {
-    height: 100%;
-    top: 2px;
-  }
-
-  .error-effect::before,
-  .error-effect::after {
-    height: calc(100% - 56px);
-  }
-
-  .old-tv-content::before {
-    background-size: cover;
-    background-position: center center;
-    border-radius: 0;
-  }
-
-  .old-tv main::after,
-  .old-tv main::before,
-  .old-tv .speaker,
-  .old-tv .volume,
-  .old-tv .channel,
-  .old-tv .power,
-  .old-tv footer {
-    display: none;
+  to {
+    transform: translateY(1100px);
+    opacity: 0;
   }
 }
 
-.area {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.area .grass {
-  position: absolute;
-  width: 100%;
-  height: 110vh;
-  background-color: #444;
-  background-image: url("../../../../../assets/jaircraft/grass-texture.png");
-  background-repeat: repeat;
-  background-size: 100px;
-  animation: 1000ms grass-animate infinite linear;
-}
-
-.area .object {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  bottom: 0;
-  left: 50%;
-  margin-left: -50px;
-  border-radius: 100%;
-  background-color: transparent;
-  background-image: url("../../../../../assets/jaircraft/aircraft-min.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  animation: 15s object-animate infinite ease-in-out;
-}
-
-.area .clouds img {
-  position: absolute;
-  height: 200px;
-  top: -300px;
-  opacity: 0.4;
-  z-index: 80;
-  filter: blur(8px);
+@keyframes grass-animate {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes object-animate {
@@ -593,46 +1180,5 @@
   }
   100% {
     transform: translateX(0px);
-  }
-}
-
-.area .clouds img:nth-child(1) {
-  left: -100px;
-  opacity: 0.2;
-  animation: 16000ms cloud-animate infinite linear;
-}
-
-.area .clouds img:nth-child(2) {
-  right: 80px;
-  animation: 14000ms cloud-animate infinite linear;
-}
-
-.area .clouds img:nth-child(3) {
-  opacity: 0.2;
-  left: 20px;
-  animation: 12000ms cloud-animate infinite linear;
-}
-
-.area .clouds img:nth-child(4) {
-  right: -90px;
-  animation: 10000ms cloud-animate infinite linear;
-}
-
-@keyframes cloud-animate {
-  80% {
-    opacity: 1;
-  }
-  to {
-    transform: translateY(1100px);
-    opacity: 0;
-  }
-}
-
-@keyframes grass-animate {
-  from {
-    transform: translateY(-100px);
-  }
-  to {
-    transform: translateY(0px);
   }
 }
